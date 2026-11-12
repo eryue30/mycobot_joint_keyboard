@@ -1,0 +1,2 @@
+# Python 源码和 Linux/ROS 配置在所有平台采用 LF，避免复制到 Ubuntu 后出现 CRLF 差异。
+* text=auto eol=lf

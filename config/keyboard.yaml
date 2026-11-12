@@ -1,0 +1,16 @@
+# 所有角度单位为度。该参数文件仅作用于新键盘节点，不修改实机驱动。
+mycobot_joint_keyboard:
+  ros__parameters:
+    step_deg: 1.0               # 每次点按的目标增量，不是持续转动的速度。
+    speed: 10                  # 传给现有 /set_angles 的速度参数，不代表 10°/s。
+    cw_signs: [-1, -1, -1, -1, -1, -1]  # 顺时针键对应的读数方向；首次逐轴核对。
+    soft_margin_deg: 2.0        # 在 URDF 与工具保守范围的交集内再留余量。
+    segment_deg: 2.0           # 回 init/home 时每段的最大关节变化。
+    feedback_timeout_sec: 0.5  # 本地接收时间和消息源时间都要足够新鲜。
+    service_timeout_sec: 2.0
+    move_timeout_sec: 10.0     # 每段等待到位的最长时间，不是整个回位动作时间。
+    settle_sec: 0.35
+    settle_spread_deg: 0.2
+    reach_tolerance_deg: 0.35
+    expected_feedback_node: listen_real_service
+    init_angles: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
